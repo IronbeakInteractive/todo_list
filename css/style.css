@@ -1,3 +1,26 @@
+.inter{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*# COLORS */
+:root {
+  --primary: white;
+  --on_primary: #e4e4e4;
+
+  --add_btn: #63b363;
+  --add_btn_hover: #e4e4e4;
+
+  --remove_btn: indianred;
+  --remove_btn_hover: #ae4c4c;
+}
+
+body{
+  font-family: "Inter", sans-serif;
+}
+
 .nav_container {
   width: 100%;
   display: flex;
@@ -5,6 +28,11 @@
   align-items: center;
   padding: 10px 20px;
   box-sizing: border-box;
+}
+
+.button_group {
+  display: flex;
+  gap: 10px;
 }
 
 .front_header {
@@ -15,14 +43,24 @@
   margin: 0;
   border: none;
   border-radius: 8px;
-  padding: 12px 12px 12px;
-  background-color: indianred;
+  padding: 10px 10px 10px;
+  background-color: var(--remove_btn);
   text-align: center;
-  color: white;
+  color: var(--primary);
   font-size: 12px;
 }
 
 .std_button:hover {
   cursor: pointer;
-  background-color: #ae4c4c;
+  background-color: var(--remove_btn_hover);
+}
+
+.body_nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: var(--on_primary);
 }
