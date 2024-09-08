@@ -1,0 +1,28 @@
+.nav_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.front_header {
+  margin: 0;
+}
+
+.std_button {
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 12px 12px;
+  background-color: indianred;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+.std_button:hover {
+  cursor: pointer;
+  background-color: #ae4c4c;
+}
