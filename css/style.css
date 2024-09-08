@@ -94,3 +94,12 @@ body{
   padding: 4px;
   background-color: var(--remove_btn);
 }
+
+.add-button{
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 10px 10px;
+  background-color: var(--add_btn);
+  font-size: 12px;
+}
