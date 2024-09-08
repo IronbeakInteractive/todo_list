@@ -52,10 +52,7 @@ body{
   font-size: 12px;
 }
 
-.std_button:hover {
-  cursor: pointer;
-  background-color: var(--remove_btn_hover);
-}
+
 
 .body_nav{
   width: 100%;
@@ -102,4 +99,12 @@ body{
   padding: 10px 10px 10px;
   background-color: var(--add_btn);
   font-size: 12px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.std_button:hover {
+  background-color: var(--remove_btn_hover);
 }

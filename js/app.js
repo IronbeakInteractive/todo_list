@@ -1,8 +1,12 @@
-// Function to handle delete button click
+
+let cardCount = 0;
+
 function handleDeleteButtonClick(event) {
   const todoCard = event.target.closest('.todo-card');
   if (todoCard) {
     todoCard.remove(); // Removes the todo card from the DOM
+    cardCount--;
+    checkCardCount()
   }
 }
 
@@ -23,6 +27,8 @@ function handleAddButtonClick() {
   `;
 
   todoList.appendChild(newTodoCard)
+  cardCount++;
+  checkCardCount()
 }
 
 // Add event listener to all delete buttons
@@ -35,3 +41,14 @@ document.addEventListener('click', function(event) {
     handleAddButtonClick(event);
   }
 });
+
+function checkCardCount() {
+  const messageDiv = document.querySelector('.card-count');
+  if (cardCount === 0) {
+    messageDiv.innerHTML = '<p>No to-dos available</p>';
+  } else {
+    messageDiv.innerHTML = ''; // Clear message if there are to-dos
+  }
+}
+
+checkCardCount();
