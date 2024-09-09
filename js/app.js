@@ -1,6 +1,8 @@
 
 let cardCount = 0;
 
+const todoList = document.querySelector('.todo-list')
+
 function handleDeleteButtonClick(event) {
   const todoCard = event.target.closest('.todo-card');
   if (todoCard) {
@@ -10,9 +12,15 @@ function handleDeleteButtonClick(event) {
   }
 }
 
-function handleAddButtonClick() {
-  const todoList = document.querySelector('.todo-list')
+function handleDeleteAllButtonClick(event) {
+  while (todoList.firstChild) {
+    todoList.removeChild(todoList.firstChild);
+  }
+  cardCount = 0;
+  checkCardCount()
+}
 
+function handleAddButtonClick() {
   const newTodoCard = document.createElement('div')
   newTodoCard.classList.add('todo-card')
   newTodoCard.innerHTML = `
@@ -37,6 +45,10 @@ document.addEventListener('click', function(event) {
     handleDeleteButtonClick(event);
   }
 
+  if (event.target.classList.contains('del-all-button')) {
+    handleDeleteAllButtonClick(event);
+  }
+
   if(event.target.classList.contains('add-button')) {
     handleAddButtonClick(event);
   }
@@ -45,7 +57,7 @@ document.addEventListener('click', function(event) {
 function checkCardCount() {
   const messageDiv = document.querySelector('.card-count');
   if (cardCount === 0) {
-    messageDiv.innerHTML = '<p>No to-dos available</p>';
+    messageDiv.innerHTML = '<p class="card-count">No to-dos available</p>';
   } else {
     messageDiv.innerHTML = ''; // Clear message if there are to-dos
   }
