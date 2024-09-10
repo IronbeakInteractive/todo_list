@@ -80,4 +80,14 @@ function checkCardCount() {
   }
 }
 
+function changeTheme(){
+  const themeToggleButton = document.getElementById('theme-toggle');
+  themeToggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    document.body.classList.toggle('dark-theme');
+  });
+}
+
+
 checkCardCount();
+changeTheme();

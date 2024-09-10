@@ -1,26 +1,53 @@
-.inter{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*# COLORS */
 :root {
   --primary: white;
   --on_primary: #e4e4e4;
 
   --add_btn: #63b363;
-  --add_btn_hover: #4b8d4b; /* Darker green for hover */
+  --add_btn_hover: #4b8d4b;
 
   --clear_comp_btn: #e6a657;
   --clear_comp_btn_hover: #c18944;
 
   --remove_btn: indianred;
-  --remove_btn_hover: #ae4c4c; /* Darker red for hover */
+  --remove_btn_hover: #ae4c4c;
 
   --edit_button: deepskyblue;
-  --edit_button_hover: #1e90ff; /* Darker blue for hover */
+  --edit_button_hover: #1e90ff;
+}
+
+/* Light theme */
+body.light-theme {
+  --primary: white;
+  --on_primary: #e4e4e4;
+  --add_btn: #63b363;
+  --add_btn_hover: #4b8d4b;
+  --clear_comp_btn: #e6a657;
+  --clear_comp_btn_hover: #c18944;
+  --remove_btn: indianred;
+  --remove_btn_hover: #ae4c4c;
+  --edit_button: deepskyblue;
+  --edit_button_hover: #1e90ff;
+  color: black;
+}
+
+/* Dark theme */
+body.dark-theme {
+  --primary: #283037;
+  --on_primary: #1c2027;
+  --add_btn: #63b363;
+  --add_btn_hover: #4b8d4b;
+  --clear_comp_btn: #e6a657;
+  --clear_comp_btn_hover: #c18944;
+  --remove_btn: indianred;
+  --remove_btn_hover: #ae4c4c;
+  --edit_button: deepskyblue;
+  --edit_button_hover: #1e90ff;
+  color: white;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--primary);
 }
 
 .edit-button:hover {
@@ -37,10 +64,6 @@
 
 .clear-comp-btn:hover {
   background-color: var(--clear_comp_btn_hover);
-}
-
-body{
-  font-family: "Inter", sans-serif;
 }
 
 .nav_container {
@@ -72,7 +95,7 @@ body{
   font-size: 12px;
 }
 
-.body_nav{
+.body_nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -83,7 +106,7 @@ body{
   border-radius: 10px;
 }
 
-.todo-card{
+.todo-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,16 +117,17 @@ body{
   border-radius: 10px;
 }
 
-.card-count{
+.card-count {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Inter", sans-serif;
+  padding: 0 0 0 2px;
 }
 
-.edit-button{
+.edit-button {
   color: var(--primary);
   border: none;
   border-radius: 8px;
@@ -111,7 +135,7 @@ body{
   background-color: var(--edit_button);
 }
 
-.delete-button{
+.delete-button {
   color: var(--primary);
   border: none;
   border-radius: 8px;
@@ -119,7 +143,7 @@ body{
   background-color: var(--remove_btn);
 }
 
-.del-all-button{
+.del-all-button {
   color: var(--primary);
   border: none;
   border-radius: 8px;
@@ -128,7 +152,7 @@ body{
   font-size: 12px;
 }
 
-.add-button{
+.add-button {
   color: var(--primary);
   border: none;
   border-radius: 8px;
@@ -137,7 +161,16 @@ body{
   font-size: 12px;
 }
 
-.clear-comp-button{
+.theme-button{
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 10px 10px;
+  background-color: var(--edit_button);
+  font-size: 12px;
+}
+
+.clear-comp-button {
   color: var(--primary);
   border: none;
   border-radius: 8px;
@@ -146,7 +179,6 @@ body{
   font-size: 12px;
 }
 
-button{
+button {
   cursor: pointer;
 }
-
