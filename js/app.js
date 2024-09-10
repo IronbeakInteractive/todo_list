@@ -1,28 +1,27 @@
-
 let cardCount = 0;
 
-const todoList = document.querySelector('.todo-list')
+const todoList = document.querySelector('.todo-list');
 
 function handleDeleteButtonClick(event) {
   const todoCard = event.target.closest('.todo-card');
   if (todoCard) {
     todoCard.remove(); // Removes the todo card from the DOM
     cardCount--;
-    checkCardCount()
+    checkCardCount();
   }
 }
 
-function handleDeleteAllButtonClick(event) {
+function handleDeleteAllButtonClick() {
   while (todoList.firstChild) {
     todoList.removeChild(todoList.firstChild);
   }
   cardCount = 0;
-  checkCardCount()
+  checkCardCount();
 }
 
 function handleAddButtonClick() {
-  const newTodoCard = document.createElement('div')
-  newTodoCard.classList.add('todo-card')
+  const newTodoCard = document.createElement('div');
+  newTodoCard.classList.add('todo-card');
   newTodoCard.innerHTML = `
     <label>
       <input type="checkbox" class="todo-checkbox">
@@ -34,23 +33,41 @@ function handleAddButtonClick() {
     </div>
   `;
 
-  todoList.appendChild(newTodoCard)
+  todoList.appendChild(newTodoCard);
   cardCount++;
-  checkCardCount()
+  checkCardCount();
 }
 
-// Add event listener to all delete buttons
+function handleRemoveCompletedButtonClick() {
+  const todoCards = document.querySelectorAll('.todo-card');
+
+  todoCards.forEach(todoCard => {
+    const checkbox = todoCard.querySelector('.todo-checkbox');
+    if (checkbox.checked) {
+      todoCard.remove(); // Remove the completed task
+      cardCount--;
+    }
+  });
+
+  checkCardCount();
+}
+
+// Add event listener to all buttons
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('delete-button')) {
     handleDeleteButtonClick(event);
   }
 
   if (event.target.classList.contains('del-all-button')) {
-    handleDeleteAllButtonClick(event);
+    handleDeleteAllButtonClick();
+  }
+
+  if (event.target.classList.contains('clear-comp-button')) {
+    handleRemoveCompletedButtonClick();
   }
 
   if(event.target.classList.contains('add-button')) {
-    handleAddButtonClick(event);
+    handleAddButtonClick();
   }
 });
 

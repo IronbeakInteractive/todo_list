@@ -11,12 +11,32 @@
   --on_primary: #e4e4e4;
 
   --add_btn: #63b363;
-  --add_btn_hover: #e4e4e4;
+  --add_btn_hover: #4b8d4b; /* Darker green for hover */
+
+  --clear_comp_btn: #e6a657;
+  --clear_comp_btn_hover: #c18944;
 
   --remove_btn: indianred;
-  --remove_btn_hover: #ae4c4c;
+  --remove_btn_hover: #ae4c4c; /* Darker red for hover */
 
-  --edit_button: deepskyblue
+  --edit_button: deepskyblue;
+  --edit_button_hover: #1e90ff; /* Darker blue for hover */
+}
+
+.edit-button:hover {
+  background-color: var(--edit_button_hover);
+}
+
+.delete-button:hover {
+  background-color: var(--remove_btn_hover);
+}
+
+.add-button:hover {
+  background-color: var(--add_btn_hover);
+}
+
+.clear-comp-btn:hover {
+  background-color: var(--clear_comp_btn_hover);
 }
 
 body{
@@ -51,8 +71,6 @@ body{
   color: var(--primary);
   font-size: 12px;
 }
-
-
 
 .body_nav{
   width: 100%;
@@ -119,10 +137,16 @@ body{
   font-size: 12px;
 }
 
+.clear-comp-button{
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 10px 10px;
+  background-color: var(--clear_comp_btn);
+  font-size: 12px;
+}
+
 button{
   cursor: pointer;
 }
 
-.std_button:hover {
-  background-color: var(--remove_btn_hover);
-}
